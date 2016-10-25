@@ -16,15 +16,18 @@ public class ConsoleImpl implements Console {
 		    String inputLN = sc.nextLine();
 		    
 		    Lichtschalter ls = new LichtschalterImpl();
+		    ls.setAddress("http://192.168.178.31/");
+		    ls.setUser("BoqfyjzI99Xfej56EdTSy59DH7T0dj-QgFqEllFY");
+		    
 		    
 		    if(inputLN.equals(ConsoleCommands.EXIT)){
 		    	break;
 		    }
 		    else if(inputLN.equals(ConsoleCommands.SWITCH_LIGHT_OFF)){
-		    	ls.swichLightOff();
+		    	ls.switchLightOff();
 		    }
 		    else if(inputLN.equals(ConsoleCommands.SWITCH_LIGHT_ON)){
-		    	ls.swichLightOn();
+		    	ls.switchLightOn();
 		    }
 		    else{
 		    	System.out.println(ConsoleCommands.COMMAND_NOT_FOUND);

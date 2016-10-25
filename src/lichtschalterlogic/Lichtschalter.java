@@ -2,8 +2,24 @@ package lichtschalterlogic;
 
 public interface Lichtschalter {
 	
-	public void swichLightOn();
+	/**
+	 * The address of the hue bridge has to be initial set.
+	 * @param address
+	 */
+	public void setAddress(String address);
 	
-	public void swichLightOff();
+	public String getAddress();
+	
+	/**
+	 * The user registered at the hue bridge has to be initial set.
+	 * @param user
+	 */
+	public void setUser(String user);
+	
+	public String getUser();
+	
+	public void switchLightOn();
+	
+	public void switchLightOff();
 
 }

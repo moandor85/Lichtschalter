@@ -12,42 +12,64 @@ import java.net.URL;
 import UserInterface.ConsoleCommands;
 
 public class LichtschalterImpl implements Lichtschalter {
+	
+	private String address;
+	
+	private String user;
+	
+	@Override
+	public void setAddress(String address) {
+		
+		this.address = address;
+		
+	}
 
 	@Override
-	public void swichLightOn() {
+	public String getAddress() {
+		
+		return this.address;
+	}
+
+	@Override
+	public void setUser(String user) {
+
+		this.user = user;
+		
+	}
+
+	@Override
+	public String getUser() {
+		
+		return this.user;
+	}
+
+	@Override
+	public void switchLightOn() {
 		// switch on light 1 & 2
 		
 		System.out.println(
-				this.executePut(
-						"http://192.168.178.31/api/BoqfyjzI99Xfej56EdTSy59DH7T0dj-QgFqEllFY/lights/1/state",
-						"{\"on\":true}")
-				);
+				this.executePut(this.address+"api/"+this.user+"/lights/1/state",
+						"{\"on\":true}"));
 		
 		System.out.println(
-				this.executePut(
-						"http://192.168.178.31/api/BoqfyjzI99Xfej56EdTSy59DH7T0dj-QgFqEllFY/lights/2/state",
-						"{\"on\":true}")
-				);
+				this.executePut(this.address+"api/"+this.user+"/lights/2/state",
+						"{\"on\":true}"));
 		
 		System.out.println(ConsoleCommands.LIGHT_SWITCHED_ON);
 		
 	}
 
 	@Override
-	public void swichLightOff() {
+	public void switchLightOff() {
 		// switch off light 1 & 2
 		
 		System.out.println(
-				this.executePut(
-						"http://192.168.178.31/api/BoqfyjzI99Xfej56EdTSy59DH7T0dj-QgFqEllFY/lights/1/state",
-						"{\"on\":false}")
-				);
+				this.executePut(this.address+"api/"+this.user+"/lights/1/state",
+						"{\"on\":false}"));
 		
 		System.out.println(
-				this.executePut(
-						"http://192.168.178.31/api/BoqfyjzI99Xfej56EdTSy59DH7T0dj-QgFqEllFY/lights/2/state",
-						"{\"on\":false}")
-				);
+				this.executePut(this.address+"api/"+this.user+"/lights/2/state",
+						"{\"on\":false}"));
 		
 		System.out.println(ConsoleCommands.LIGHT_SWITCHED_OFF);
 	}
