@@ -10,15 +10,14 @@ public class ConsoleImpl implements Console {
 	@Override
 	public void listen() {
 		Scanner sc = new Scanner(System.in);
+		
+		Lichtschalter ls = new LichtschalterImpl();
+	    ls.setAddress("http://192.168.178.31/");
+	    ls.setUser("BoqfyjzI99Xfej56EdTSy59DH7T0dj-QgFqEllFY");
 	    
 		while (true) {
 			System.out.print(ConsoleCommands.ENTER_COMMAND);
 		    String inputLN = sc.nextLine();
-		    
-		    Lichtschalter ls = new LichtschalterImpl();
-		    ls.setAddress("http://192.168.178.31/");
-		    ls.setUser("BoqfyjzI99Xfej56EdTSy59DH7T0dj-QgFqEllFY");
-		    
 		    
 		    if(inputLN.equals(ConsoleCommands.EXIT)){
 		    	break;
