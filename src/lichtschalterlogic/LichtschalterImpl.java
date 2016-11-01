@@ -9,8 +9,6 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 
-import UserInterface.ConsoleCommands;
-
 public class LichtschalterImpl implements Lichtschalter {
 	
 	private String address;
@@ -55,7 +53,7 @@ public class LichtschalterImpl implements Lichtschalter {
 				this.executePut(this.address+"api/"+this.user+"/lights/2/state",
 						"{\"on\":true}"));
 		
-		System.out.println(ConsoleCommands.LIGHT_SWITCHED_ON);
+		
 		
 	}
 
@@ -71,7 +69,7 @@ public class LichtschalterImpl implements Lichtschalter {
 				this.executePut(this.address+"api/"+this.user+"/lights/2/state",
 						"{\"on\":false}"));
 		
-		System.out.println(ConsoleCommands.LIGHT_SWITCHED_OFF);
+		
 	}
 	
 	private String executePut(String targetURL, String urlParameters) {

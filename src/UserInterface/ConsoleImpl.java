@@ -24,9 +24,11 @@ public class ConsoleImpl implements Console {
 		    }
 		    else if(inputLN.equals(ConsoleCommands.SWITCH_LIGHT_OFF)){
 		    	ls.switchLightOff();
+		    	System.out.println(ConsoleCommands.LIGHT_SWITCHED_ON);
 		    }
 		    else if(inputLN.equals(ConsoleCommands.SWITCH_LIGHT_ON)){
 		    	ls.switchLightOn();
+		    	System.out.println(ConsoleCommands.LIGHT_SWITCHED_OFF);
 		    }
 		    else{
 		    	System.out.println(ConsoleCommands.COMMAND_NOT_FOUND);
