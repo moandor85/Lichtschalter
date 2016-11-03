@@ -2,8 +2,8 @@ package UserInterface;
 
 import java.util.Scanner;
 
-import lichtschalterlogic.Lichtschalter;
-import lichtschalterlogic.LichtschalterImpl;
+import lichtschalterlogic.LightSwitch;
+import lichtschalterlogic.LightSwitchImpl;
 
 public class ConsoleImpl implements Console {
 
@@ -11,7 +11,7 @@ public class ConsoleImpl implements Console {
 	public void listen() {
 		Scanner sc = new Scanner(System.in);
 		
-		Lichtschalter ls = new LichtschalterImpl();
+		LightSwitch ls = new LightSwitchImpl();
 	    ls.setAddress("http://192.168.178.31/");
 	    ls.setUser("BoqfyjzI99Xfej56EdTSy59DH7T0dj-QgFqEllFY");
 	    

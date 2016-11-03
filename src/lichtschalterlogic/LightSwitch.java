@@ -1,6 +1,6 @@
 package lichtschalterlogic;
 
-public interface Lichtschalter {
+public interface LightSwitch {
 	
 	/**
 	 * The address of the hue bridge has to be initial set.
