@@ -1,5 +1,6 @@
-import UserInterface.Console;
-import UserInterface.ConsoleImpl;
+package de.moandor.lightswitch;
+import de.moandor.lightswitch.userinterface.Console;
+import de.moandor.lightswitch.userinterface.ConsoleImpl;
 
 public class Main {
 

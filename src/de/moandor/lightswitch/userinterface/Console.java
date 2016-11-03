@@ -1,4 +1,4 @@
-package UserInterface;
+package de.moandor.lightswitch.userinterface;
 
 public interface Console {
 	

@@ -1,4 +1,4 @@
-package lichtschalterlogic;
+package de.moandor.lightswitch.logic;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package lichtschalterlogic;
+package de.moandor.lightswitch.logic;
 
 public interface LightSwitch {
 	

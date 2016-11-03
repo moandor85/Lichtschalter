@@ -1,9 +1,9 @@
-package UserInterface;
+package de.moandor.lightswitch.userinterface;
 
 import java.util.Scanner;
 
-import lichtschalterlogic.LightSwitch;
-import lichtschalterlogic.LightSwitchImpl;
+import de.moandor.lightswitch.logic.LightSwitch;
+import de.moandor.lightswitch.logic.LightSwitchImpl;
 
 public class ConsoleImpl implements Console {
 
