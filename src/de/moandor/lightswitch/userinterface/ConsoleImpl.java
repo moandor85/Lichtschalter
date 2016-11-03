@@ -3,7 +3,7 @@ package de.moandor.lightswitch.userinterface;
 import java.util.Scanner;
 
 import de.moandor.lightswitch.logic.LightSwitch;
-import de.moandor.lightswitch.logic.LightSwitchImpl;
+import de.moandor.lightswitch.logic.LightSwitchManager;
 
 public class ConsoleImpl implements Console {
 
@@ -11,7 +11,7 @@ public class ConsoleImpl implements Console {
 	public void listen() {
 		Scanner sc = new Scanner(System.in);
 		
-		LightSwitch ls = new LightSwitchImpl();
+		LightSwitch ls = LightSwitchManager.getInstanceOf();
 	    ls.setAddress("http://192.168.178.31/");
 	    ls.setUser("BoqfyjzI99Xfej56EdTSy59DH7T0dj-QgFqEllFY");
 	    
