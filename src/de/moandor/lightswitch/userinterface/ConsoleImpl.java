@@ -12,7 +12,7 @@ public class ConsoleImpl implements Console {
 		Scanner sc = new Scanner(System.in);
 		
 		LightSwitch ls = LightSwitchManager.getInstanceOf();
-	    ls.setAddress("http://192.168.178.31/");
+	    ls.setAddress("http://192.168.0.4/");
 	    ls.setUser("BoqfyjzI99Xfej56EdTSy59DH7T0dj-QgFqEllFY");
 	    
 		while (true) {
