@@ -43,32 +43,45 @@ import java.net.URL;
 
 	@Override
 	public void switchLightOn() {
-		// switch on light 1 & 2
+		// switch on light 1 ; 3 ; 5 & 6
 		
 		System.out.println(
 				this.executePut(this.address+"api/"+this.user+"/lights/1/state",
 						"{\"on\":true}"));
 		
 		System.out.println(
-				this.executePut(this.address+"api/"+this.user+"/lights/2/state",
+				this.executePut(this.address+"api/"+this.user+"/lights/3/state",
 						"{\"on\":true}"));
 		
+		System.out.println(
+				this.executePut(this.address+"api/"+this.user+"/lights/5/state",
+						"{\"on\":true}"));
 		
+		System.out.println(
+				this.executePut(this.address+"api/"+this.user+"/lights/6/state",
+						"{\"on\":true}"));
 		
 	}
 
 	@Override
 	public void switchLightOff() {
-		// switch off light 1 & 2
+		// switch off light 1 ; 3 ; 5 & 6
 		
 		System.out.println(
 				this.executePut(this.address+"api/"+this.user+"/lights/1/state",
 						"{\"on\":false}"));
 		
 		System.out.println(
-				this.executePut(this.address+"api/"+this.user+"/lights/2/state",
+				this.executePut(this.address+"api/"+this.user+"/lights/3/state",
 						"{\"on\":false}"));
 		
+		System.out.println(
+				this.executePut(this.address+"api/"+this.user+"/lights/5/state",
+						"{\"on\":false}"));
+		
+		System.out.println(
+				this.executePut(this.address+"api/"+this.user+"/lights/6/state",
+						"{\"on\":false}"));
 		
 	}
 	
