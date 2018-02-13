@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 import de.moandor.lightswitch.logic.LightSwitch;
 import de.moandor.lightswitch.logic.LightSwitchManager;
+import de.moandor.lightswitch.properties.PropertyManager;
+import de.moandor.lightswitch.properties.PropertyManagerImpl;
 
 public class ConsoleImpl implements Console {
 
@@ -12,7 +14,11 @@ public class ConsoleImpl implements Console {
 		Scanner sc = new Scanner(System.in);
 		
 		LightSwitch ls = LightSwitchManager.getInstanceOf();
-	    ls.setAddress("http://192.168.0.4/");
+		
+		PropertyManager propMan = new PropertyManagerImpl();
+		ls.setAddress(propMan.getLocalSwitchIP());
+	    //ls.setAddress("http://192.168.0.4/");
+	    
 	    ls.setUser("BoqfyjzI99Xfej56EdTSy59DH7T0dj-QgFqEllFY");
 	    
 		while (true) {
