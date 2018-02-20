@@ -64,9 +64,9 @@ public class PropertyManagerImpl implements PropertyManager {
 			OutputStream output;
 			output = new FileOutputStream(propertyFileName);
 			
-			getLocalSwitchIPAddr();
+			String localSwitchIp = getLocalSwitchIPAddr();
 			
-			lsProps.setProperty("localSwitchIP", "http://192.168.0.4/");
+			lsProps.setProperty("localSwitchIP", "http://" + localSwitchIp + "/");
 			
 			lsProps.store(output, null);
 			
@@ -79,13 +79,12 @@ public class PropertyManagerImpl implements PropertyManager {
 	private String getLocalSwitchIPAddr() {
 		
 		StringBuffer response = new StringBuffer();
+		String respString = new String();
 		
 		try {
 			URL url = new URL("https://www.meethue.com/api/nupnp");
 			HttpURLConnection con = (HttpURLConnection) url.openConnection();
 			con.setRequestMethod("GET");
-			
-			System.out.println(con.getResponseCode());
 			
 			BufferedReader in = new BufferedReader(
 					new InputStreamReader(con.getInputStream()));
@@ -97,17 +96,15 @@ public class PropertyManagerImpl implements PropertyManager {
 			}
 			in.close();
 			
-			String respString = response.toString();
-			//TODO 13.2.2018
-			System.out.println(respString);
-			//regEx the response into a correct IP addr
-			respString = respString.replaceFirst(".*internalipaddress", "");
+			respString = response.toString();
 			
-			System.out.println(respString);
+			//regEx the response into a correct IPV4 addr
+			respString = respString.replaceFirst(".*internalipaddress.{3}", "");
+			respString = respString.replaceFirst(".{3}$", "");
 			
 			
 		} catch (MalformedURLException e ) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		} catch (ProtocolException e){
 			e.printStackTrace();
@@ -115,7 +112,7 @@ public class PropertyManagerImpl implements PropertyManager {
 			e.printStackTrace();
 		}
 		
-		return null;
+		return respString;
 	}
 
 }
