@@ -26,8 +26,10 @@ public class PropertyManagerImpl implements PropertyManager {
 
 	@Override
 	public String getLightSwitchUser() {
-		// TODO Auto-generated method stub
-		return null;
+				
+		String user = lsProps.getProperty("userName");
+				
+		return user;
 	}
 
 	@Override
@@ -64,9 +66,14 @@ public class PropertyManagerImpl implements PropertyManager {
 			OutputStream output;
 			output = new FileOutputStream(propertyFileName);
 			
+			//create property for local bridge ip
 			String localSwitchIp = getLocalSwitchIPAddr();
-			
 			lsProps.setProperty("localSwitchIP", "http://" + localSwitchIp + "/");
+			
+			//create property for local user on bridge
+			String bridgeUser = getBridgeUserName();
+			System.out.println(bridgeUser);
+			lsProps.setProperty("userName",bridgeUser);
 			
 			lsProps.store(output, null);
 			
@@ -76,6 +83,31 @@ public class PropertyManagerImpl implements PropertyManager {
 		
 	}
 	
+	private String getBridgeUserName() {
+		
+		String bridgeUserName = new String();
+		
+		try {
+			InputStream input;
+			input = new FileInputStream("src/de/moandor/lightswitch/cred.properties");
+			
+			Properties cred = new Properties();
+			cred.load(input);
+			
+			bridgeUserName = cred.getProperty("userName");
+			
+		} catch (FileNotFoundException fnfex){
+			
+			fnfex.printStackTrace();
+			
+		}
+		catch (IOException ex){
+			ex.printStackTrace();
+		}
+		
+		return bridgeUserName;
+	}
+
 	private String getLocalSwitchIPAddr() {
 		
 		StringBuffer response = new StringBuffer();

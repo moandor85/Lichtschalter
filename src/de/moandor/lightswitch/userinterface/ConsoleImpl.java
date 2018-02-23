@@ -17,9 +17,7 @@ public class ConsoleImpl implements Console {
 		
 		PropertyManager propMan = new PropertyManagerImpl();
 		ls.setAddress(propMan.getLocalSwitchIP());
-	    //ls.setAddress("http://192.168.0.4/");
-	    
-	    ls.setUser("BoqfyjzI99Xfej56EdTSy59DH7T0dj-QgFqEllFY");
+	    ls.setUser(propMan.getLightSwitchUser());
 	    
 		while (true) {
 			System.out.print(ConsoleCommands.ENTER_COMMAND);
