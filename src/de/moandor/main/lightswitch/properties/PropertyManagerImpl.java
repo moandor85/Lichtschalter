@@ -1,4 +1,4 @@
-package de.moandor.lightswitch.properties;
+package de.moandor.main.lightswitch.properties;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -72,7 +72,6 @@ public class PropertyManagerImpl implements PropertyManager {
 			
 			//create property for local user on bridge
 			String bridgeUser = getBridgeUserName();
-			System.out.println(bridgeUser);
 			lsProps.setProperty("userName",bridgeUser);
 			
 			lsProps.store(output, null);
@@ -89,7 +88,7 @@ public class PropertyManagerImpl implements PropertyManager {
 		
 		try {
 			InputStream input;
-			input = new FileInputStream("src/de/moandor/lightswitch/cred.properties");
+			input = new FileInputStream("src/de/moandor/main/lightswitch/cred.properties");
 			
 			Properties cred = new Properties();
 			cred.load(input);

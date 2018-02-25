@@ -1,11 +1,11 @@
-package de.moandor.lightswitch.userinterface;
+package de.moandor.main.lightswitch.userinterface;
 
 import java.util.Scanner;
 
-import de.moandor.lightswitch.logic.LightSwitch;
-import de.moandor.lightswitch.logic.LightSwitchManager;
-import de.moandor.lightswitch.properties.PropertyManager;
-import de.moandor.lightswitch.properties.PropertyManagerImpl;
+import de.moandor.main.lightswitch.logic.LightSwitch;
+import de.moandor.main.lightswitch.logic.LightSwitchManager;
+import de.moandor.main.lightswitch.properties.PropertyManager;
+import de.moandor.main.lightswitch.properties.PropertyManagerImpl;
 
 public class ConsoleImpl implements Console {
 

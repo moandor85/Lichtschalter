@@ -5,4 +5,4 @@
  * @author moandor85
  *
  */
-package de.moandor.lightswitch.logic;
+package de.moandor.main.lightswitch.logic;

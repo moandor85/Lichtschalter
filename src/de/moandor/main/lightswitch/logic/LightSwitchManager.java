@@ -1,4 +1,4 @@
-package de.moandor.lightswitch.logic;
+package de.moandor.main.lightswitch.logic;
 
 public class LightSwitchManager {
 	

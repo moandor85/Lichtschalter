@@ -5,4 +5,4 @@
  * @author moandor85
  *
  */
-package de.moandor.lightswitch;
+package de.moandor.main.lightswitch.userinterface;

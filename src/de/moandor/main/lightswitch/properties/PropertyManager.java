@@ -1,4 +1,4 @@
-package de.moandor.lightswitch.properties;
+package de.moandor.main.lightswitch.properties;
 
 public interface PropertyManager {
 
