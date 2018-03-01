@@ -36,11 +36,23 @@ public class ConsoleImpl implements Console {
 		    	ls.switchLightOn();
 		    	System.out.println(ConsoleCommands.LIGHT_SWITCHED_ON);
 		    }
+		    else if(inputLN.equals(ConsoleCommands.HELP[0]) || inputLN.equals(ConsoleCommands.HELP[1])){
+		    	printHelp();
+		    }
 		    else{
 		    	System.out.println(ConsoleCommands.COMMAND_NOT_FOUND);
 		    }
 		}
 		sc.close();
+	}
+	
+	private void printHelp(){
+		System.out.println("Folgende Kommandos sind verfügbar:");
+		System.out.println(ConsoleCommands.HELP[0]);
+		System.out.println(ConsoleCommands.HELP[1]);
+		System.out.println(ConsoleCommands.SWITCH_LIGHT_ON);
+		System.out.println(ConsoleCommands.SWITCH_LIGHT_OFF);
+		System.out.println(ConsoleCommands.EXIT);
 	}
 
 }
